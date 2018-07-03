@@ -1,0 +1,21 @@
+we are using melodic which does not have catkin_make, so we need to be cleverer
+
+we will use catkin_tools to do it,
+so first install catkin_tools
+
+$ sudo apt-get install python-catkin-tools
+
+then we need to configure the workspace we created with
+
+$ catkin config --extend /opt/ros/melodic/
+
+you can check it. it should not have errors here. From now on it is like catkin_make. we do:
+
+$ catkin build
+
+It should also work without issues.
+
+Now we test it without
+
+$ source devel/setup.bash
+$ roslaunch dockerlauncher dockerlauncher
