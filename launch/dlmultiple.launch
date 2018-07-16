@@ -1,0 +1,18 @@
+<launch>
+  <!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/ -->
+  <!-- node name="tmpinit" pkg="dockerlauncher" type="init_dt_temp.sh" output="screen" args="$(find dockerlauncher)"/ -->
+  <include ns="poop" file="$(find dockerlauncher)/launch/dockerlauncher.launch" >
+    <arg name="dnamespace" value="poop" />
+    <arg name="dtunnelport" value="19998" />
+    <arg name="duser" value="frederico" />
+    <arg name="userpass" value="---define own password here ---"/>
+  </include>
+  <include ns="cosmos" file="$(find dockerlauncher)/launch/dockerlauncher.launch" >
+    <arg name="dnamespace" value="cosmos" />
+    <arg name="dtunnelport" value="19996" />
+    <arg name="duser" value="fbklein" />
+    <arg name="userpass" value="---define own password here ---"/>
+  </include>
+
+
+</launch>
